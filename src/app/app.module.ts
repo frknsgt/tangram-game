@@ -1,18 +1,23 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
-
+import { DragDropModule } from '@angular/cdk/drag-drop';
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
+import {
+  LevelEasyOneComponent,
+  LevelHardOneComponent,
+  LevelMediumOneComponent,
+} from './pages';
 
 @NgModule({
   declarations: [
-    AppComponent
+    AppComponent,
+    LevelEasyOneComponent,
+    LevelHardOneComponent,
+    LevelMediumOneComponent,
   ],
-  imports: [
-    BrowserModule,
-    AppRoutingModule
-  ],
+  imports: [BrowserModule, DragDropModule, AppRoutingModule],
   providers: [],
-  bootstrap: [AppComponent]
+  bootstrap: [AppComponent],
 })
-export class AppModule { }
+export class AppModule {}
