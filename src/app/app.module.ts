@@ -7,6 +7,7 @@ import {
   LevelEasyOneComponent,
   LevelHardOneComponent,
   LevelMediumOneComponent,
+  LevelEasyTwoComponent
 } from './pages';
 
 @NgModule({
@@ -15,6 +16,7 @@ import {
     LevelEasyOneComponent,
     LevelHardOneComponent,
     LevelMediumOneComponent,
+    LevelEasyTwoComponent,
   ],
   imports: [BrowserModule, DragDropModule, AppRoutingModule],
   providers: [],

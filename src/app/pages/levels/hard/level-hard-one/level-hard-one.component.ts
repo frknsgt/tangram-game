@@ -10,6 +10,8 @@ export class LevelHardOneComponent implements OnInit {
   constructor() {}
 
   dragPosition = { x: 0, y: 0 };
+  sefa:number;
+  furkan:string="furkan";
 
   ngOnInit(): void {}
 
@@ -21,5 +23,8 @@ export class LevelHardOneComponent implements OnInit {
       x: this.dragPosition.x + 50,
       y: this.dragPosition.y + 50,
     };
+  }
+  test(isim){
+    alert(isim +" sa ")
   }
 }
