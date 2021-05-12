@@ -1,0 +1,15 @@
+.section {
+    &__box {
+      position: fixed;
+      z-index: 1;
+      top: 0;
+      left: 0;
+    }
+  }
+  
+  .screen {
+    width: 100vw;
+    height: 100vh;
+    overflow: hidden;
+  }
+  
