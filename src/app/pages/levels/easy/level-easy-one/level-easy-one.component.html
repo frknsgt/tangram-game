@@ -5,42 +5,16 @@
         </div>
     </div>
 </div>
-<div id="1" class="section__box section__box__1" cdkDrag [cdkDragFreeDragPosition]="dragPosition[0]" (cdkDragEnded)="dragEnd($event)">
-    <img src="../../../../../assets/images/level-easy-one/level-easy-one-1..png">
+<div *ngFor="let item of dragPosition; let i =index" id="{{i+1}}" class="section__box sectionbox__1" cdkDrag
+    [cdkDragFreeDragPosition]="item" (cdkDragEnded)="dragEnd($event)">
+    <img src="../../../../../assets/images/level-easy-one/level-easy-one-{{i+1}}..png">
 </div>
-<div id="2" class="section__box section__box__2" cdkDrag [cdkDragFreeDragPosition]="dragPosition[1]" (cdkDragEnded)="dragEnd($event)">
-    <img src="../../../../../assets/images/level-easy-one/level-easy-one-2..png">
-</div>
-<div id="3" class="section__box section__box__3" cdkDrag [cdkDragFreeDragPosition]="dragPosition[2]" (cdkDragEnded)="dragEnd($event)">
-    <img src="../../../../../assets/images/level-easy-one/level-easy-one-3..png">
-</div>
-<div id="4" class="section__box section__box__4" cdkDrag [cdkDragFreeDragPosition]="dragPosition[3]" (cdkDragEnded)="dragEnd($event)">
-    <img src="../../../../../assets/images/level-easy-one/level-easy-one-4..png">
-</div>
-<div id="5" class="section__box section__box__5" cdkDrag [cdkDragFreeDragPosition]="dragPosition[4]" (cdkDragEnded)="dragEnd($event)">
-    <img src="../../../../../assets/images/level-easy-one/level-easy-one-5..png">
-</div>
-<div id="6" class="section__box section__box__6" cdkDrag [cdkDragFreeDragPosition]="dragPosition[5]" (cdkDragEnded)="dragEnd($event)">
-    <img src="../../../../../assets/images/level-easy-one/level-easy-one-6..png">
-</div>
-<div id="7" class="section__box section__box__7" cdkDrag [cdkDragFreeDragPosition]="dragPosition[6]" (cdkDragEnded)="dragEnd($event)">
-    <img src="../../../../../assets/images/level-easy-one/level-easy-one-7..png">
-</div>
-
-
-
-<div id="myModal" class="modal">
-    
-    <!-- Modal content -->
-    <div id="end" class="modal-content">
-        <h1 >TEBRİKLER!!</h1>
+<div id="myModal" class="modal" *ngIf="endGameControl">
+    <div id="end" class="modal-content bg-dark text-white">
+        <h1>TEBRİKLER!!</h1>
         <div class="gameover">
-      <button (click)="routefonk1()" class="gameEnd" >Ana Menu</button>
-      <button (click)="routefonk2()"class="gameEnd" >Sonraki Bölüm</button>
-      <button (click)="routefonk3()"class="gameEnd" >Emeği Geçenler</button>
-
+            <button (click)="mainMenu()" class="btn btn-secondary gameEnd">Ana Menu</button>
+            <button (click)="nextLevel()" class="btn btn-secondary gameEnd">Sonraki Bölüm</button>
+        </div>
     </div>
-    
-    </div>
-  
-  </div>
+</div>

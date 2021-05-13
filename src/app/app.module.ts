@@ -7,7 +7,10 @@ import {
   LevelEasyOneComponent,
   LevelHardOneComponent,
   LevelMediumOneComponent,
+  HomepageComponent,
+  AboutComponent,
 } from './pages';
+
 
 @NgModule({
   declarations: [
@@ -15,6 +18,8 @@ import {
     LevelEasyOneComponent,
     LevelHardOneComponent,
     LevelMediumOneComponent,
+    HomepageComponent,
+    AboutComponent,
   ],
   imports: [BrowserModule, DragDropModule, AppRoutingModule],
   providers: [],
