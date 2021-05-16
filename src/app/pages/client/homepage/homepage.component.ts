@@ -9,12 +9,9 @@ export class HomepageComponent implements OnInit {
 
   constructor() { }
 
-  async ngOnInit() {
-  function changeColor ( $id )
-    {
-        document.body.style.backgroundColor = document.getElementById($id).innerHTML;
-    }
-  }
+   ngOnInit():void {
+     
+   }
 
 }
 
