@@ -11,6 +11,8 @@ import {
   AboutComponent,
 } from './pages';
 
+import { LevelScreenComponent } from './pages/client/components/level-screen/level-screen.component';
+
 
 @NgModule({
   declarations: [
@@ -20,6 +22,8 @@ import {
     LevelMediumOneComponent,
     HomepageComponent,
     AboutComponent,
+   
+    LevelScreenComponent,
   ],
   imports: [BrowserModule, DragDropModule, AppRoutingModule],
   providers: [],
