@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { CdkDragEnd } from '@angular/cdk/drag-drop';
 import { Router } from '@angular/router';
+import { AngularFirestore } from '@angular/fire/firestore';
 
 @Component({
   selector: 'app-level-easy-one',
@@ -9,7 +10,7 @@ import { Router } from '@angular/router';
 })
 export class LevelEasyOneComponent implements OnInit {
   constructor(
-    private _router:Router
+    private _router:Router,private db: AngularFirestore
   ) {}
 
   dragPosition =[
@@ -36,6 +37,9 @@ export class LevelEasyOneComponent implements OnInit {
   endGameControl:boolean=false;
 
   ngOnInit(): void {
+    const things = this.db.collection('users').valueChanges();
+    
+      things.subscribe(console.log);
 
   }
   mainMenu(){
