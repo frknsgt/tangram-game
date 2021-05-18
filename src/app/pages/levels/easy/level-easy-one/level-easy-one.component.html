@@ -10,7 +10,7 @@
     <img src="../../../../../assets/images/{{currentLevel}}/{{i+1}}.png">
 </div>
 
-<div id="myModal" class="modal" >
+<div id="myModal" class="modal" *ngIf="endGameControl" >
     <div id="end" class="modal-content bg-dark text-white">
         <h1>TEBRİKLER!!</h1>
         <div class="gameover">

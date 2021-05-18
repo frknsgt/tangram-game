@@ -14,14 +14,9 @@ export class LevelEasyOneComponent implements OnInit {
   ) {
   }
 
-  dragPosition =[
-  ] ;
-  objectPosition=[
-
-  ]
-  objectControl=[
-    false,false,false,false,false,false,false
-  ]
+  dragPosition =[]
+  objectPosition=[]
+  objectControl=[]
   gameStart:boolean=true;
   endGameControl:boolean=false;
   currentLevel:string;
@@ -29,11 +24,10 @@ export class LevelEasyOneComponent implements OnInit {
   ngOnInit(): void {
     
     this.level=this.activatedRoute.snapshot.paramMap.get('level');
-    if(+this.level<1||+this.level>10){
+    if(+this.level<1||+this.level>9){
       this._router.navigateByUrl('');
     }else{
     this.db.collection("levels").doc(this.level).valueChanges().subscribe((ss)=>{
-      console.log(ss)
       this.setArrays(ss);
     })
   }
@@ -76,8 +70,8 @@ export class LevelEasyOneComponent implements OnInit {
       let x:number = +xAndy[0],y:number=+xAndy[1];
       this.objectPosition.push({x:x,y:y})
       this.dragPosition.push({x:0,y:0})
+      this.objectControl.push(false);
     }
-    console.log(this.objectPosition)
   }
   dragEnd($event: CdkDragEnd) {
     
@@ -86,6 +80,7 @@ export class LevelEasyOneComponent implements OnInit {
     let id=parseInt($event.source.element.nativeElement.id)
     this.objectControl[id-1]=false;
     let aralikx=10,araliky=10;
+    
     let screenx = this._getScreenSize().w/2 , screeny = this._getScreenSize().h/2;
       if(screenx-aralikx<x+this.objectPosition[id-1].x&&x+this.objectPosition[id-1].x<screenx+aralikx&&screeny-araliky<y+this.objectPosition[id-1].y&&y+this.objectPosition[id-1].y<screeny+araliky){
         this.changePosition(-this.objectPosition[id-1].x,-this.objectPosition[id-1].y,id)
@@ -94,9 +89,14 @@ export class LevelEasyOneComponent implements OnInit {
       if(x+this.objectPosition[id-1].x>screenx*2||x+this.objectPosition[id-1].x<0||y+this.objectPosition[id-1].y>screeny*2||y+this.objectPosition[id-1].y<0){
         this.changePosition(0,0,id,true)
       }
-    if(this.objectControl[0]&&this.objectControl[1]&&this.objectControl[2]&&this.objectControl[3]&&this.objectControl[4]&&this.objectControl[5]&&this.objectControl[6]){
+      let control:number=0;
+    for(var i=0;i<this.objectControl.length;i++){
+      if(this.objectControl[i]==true){
+        control++;
+      }
+    }
+    if(control==this.objectControl.length){
       this.endgame();
-   // this._router.navigateByUrl('level-hard-one')
     }
   }
 
