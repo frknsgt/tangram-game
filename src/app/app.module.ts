@@ -3,7 +3,6 @@ import { NgModule } from '@angular/core';
 import { DragDropModule } from '@angular/cdk/drag-drop';
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
-//firebase import
 import { AngularFireModule } from '@angular/fire';
 import { AngularFirestoreModule } from '@angular/fire/firestore';
 import { AngularFireStorageModule } from '@angular/fire/storage';
@@ -17,6 +16,8 @@ import {
   AboutComponent,
 } from './pages';
 
+import { LevelScreenComponent } from './pages/client/components/level-screen/level-screen.component';
+
 
 
 @NgModule({
@@ -26,16 +27,16 @@ import {
     LevelHardOneComponent,
     LevelMediumOneComponent,
     HomepageComponent,
-    AboutComponent,
-
+    AboutComponent, 
+    LevelScreenComponent,
   ],
   imports: [
     BrowserModule,
     DragDropModule, 
     AppRoutingModule, 
     AngularFireModule.initializeApp(firebaseConfig),
-    AngularFirestoreModule, // firestore
-    AngularFireAuthModule, // auth
+    AngularFirestoreModule, 
+    AngularFireAuthModule, 
     AngularFireStorageModule 
   ],
   providers: [],
