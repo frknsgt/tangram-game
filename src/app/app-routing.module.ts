@@ -1,14 +1,14 @@
 import { NgModule } from '@angular/core';
 import { Routes, RouterModule } from '@angular/router';
-import { LevelEasyOneComponent, LevelHardOneComponent } from './pages';
-import { LevelScreenComponent } from './pages/client/components/level-screen/level-screen.component';
-import { SelectionScreenComponent } from './pages/client/components/selection-screen/selection-screen.component';
+import { LevelEasyOneComponent,LevelHardOneComponent,HomepageComponent } from './pages';
 
 const routes: Routes = [
-  { path: '', component: LevelEasyOneComponent },
-  { path: 'level-hard-one', component: LevelHardOneComponent },
-  { path: 'selection-screen', component:SelectionScreenComponent},
-  {path: 'levels',component:LevelScreenComponent}
+  
+ 
+  {path : '',component:HomepageComponent},
+
+  { path: ':level', component: LevelEasyOneComponent},
+  {path : 'redirect/:id',component:LevelHardOneComponent},
 ];
 
 @NgModule({
