@@ -25,32 +25,30 @@
 }
 .yazi1{
     color:white;
-    font-size: 35px;
+    font-size: 20px;
+	width: 400px;
+	height: 70px;
     letter-spacing: 8px;
     margin-bottom: 20px;
-    animation: yazi-anim 3s ease;
-    /* position: relative; */
     z-index: 999;
-    background-color: lightcoral;
+	border-radius: 20px;
     font-weight: bolder;
-    
+	background: linear-gradient(-45deg, #ee7752, #e73c7e, #23a6d5, #23d5ab);
+    background-size: 400% 400%;
+    animation: gradient 7s ease infinite;
 }
 
-@keyframes yazi-anim{
-    0%{
-        margin-bottom: -40px;
-        letter-spacing: 8px;
+@keyframes gradient {
+    0% {
+        background-position: 0% 50%;
     }
-    30%{
-        margin-bottom: -40px;
-        letter-spacing: 30px;
+    50% {
+        background-position: 100% 50%;
     }
-    90%{
-        margin-bottom:-40px;
+    100% {
+        background-position: 0% 50%;
     }
 }
-
-
 
 
 body {
