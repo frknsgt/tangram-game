@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { CdkDragEnd } from '@angular/cdk/drag-drop';
-import { Router } from '@angular/router';
+import {Router, ActivatedRoute, Params} from '@angular/router';
 import { AngularFirestore } from '@angular/fire/firestore';
 
 @Component({
@@ -10,50 +10,77 @@ import { AngularFirestore } from '@angular/fire/firestore';
 })
 export class LevelEasyOneComponent implements OnInit {
   constructor(
-    private _router:Router,private db: AngularFirestore
-  ) {}
+    private _router:Router,private db: AngularFirestore,private activatedRoute: ActivatedRoute
+  ) {
+  }
 
   dragPosition =[
-    { x: 0, y: 0 },
-    { x: 0, y: 0 },
-    { x: 0, y: 0 },
-    { x: 0, y: 0 },
-    { x: 0, y: 0 },
-    { x: 0, y: 0 },
-    { x: 0, y: 0 }
   ] ;
   objectPosition=[
-    { x: 128.5, y: 62 },
-    { x: 128.5, y: 22 },
-    { x: 70.5, y: -29 },
-    { x: 67.5, y: 48 },
-    { x: -55.5, y: -28 },
-    { x: -88.5, y: 19 },
-    { x: -89.5, y: -24 }
+
   ]
   objectControl=[
     false,false,false,false,false,false,false
   ]
+  gameStart:boolean=true;
   endGameControl:boolean=false;
-
+  currentLevel:string;
+  level:string="1";
   ngOnInit(): void {
-    const things = this.db.collection('users').valueChanges();
     
-      things.subscribe(console.log);
+    this.level=this.activatedRoute.snapshot.paramMap.get('level');
+    if(+this.level<1||+this.level>10){
+      this._router.navigateByUrl('');
+    }else{
+    this.db.collection("levels").doc(this.level).valueChanges().subscribe((ss)=>{
+      console.log(ss)
+      this.setArrays(ss);
+    })
+  }
 
   }
+
+
   mainMenu(){
-    this._router.navigateByUrl('level-hard-one')
+    this._router.navigateByUrl('')
   }
   nextLevel(){
-this._router.navigateByUrl('level-hard-one')
+  let a :number=+this.level;
+  a=a+1;
+  let level:string=a.toString();
+  this._router.navigate(['redirect',level])
+
+
   }
 
   endgame(){
     this.endGameControl=true;
   }
 
+
+  setArrays(level){
+    let deneme:string = level.a;
+    this.currentLevel=level.b;
+    var sayac=0;
+    for (var _i = 0; _i < deneme.length; _i++) {
+      var num = deneme[_i];
+      if(num=='/'){
+        sayac++;
+      }
+     
+    }
+    let koordinats=deneme.split('/',sayac)
+    for (var _i = 0; _i < koordinats.length; _i++) {
+      var num = koordinats[_i];
+      let xAndy = num.split(',',2)
+      let x:number = +xAndy[0],y:number=+xAndy[1];
+      this.objectPosition.push({x:x,y:y})
+      this.dragPosition.push({x:0,y:0})
+    }
+    console.log(this.objectPosition)
+  }
   dragEnd($event: CdkDragEnd) {
+    
     let x= $event.source.getFreeDragPosition().x;
     let y= $event.source.getFreeDragPosition().y;
     let id=parseInt($event.source.element.nativeElement.id)

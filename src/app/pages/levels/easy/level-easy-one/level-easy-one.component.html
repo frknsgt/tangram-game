@@ -1,20 +1,21 @@
 <div class="screen">
-    <div class="row align-items-center text-center  h-100 m-0">
+    <div  class="row align-items-center text-center  h-100 m-0">
         <div class="col -6 mx-auto">
-            <img src="../../../../../assets/images/easy-one/template.png">
+            <img src="../../../../../assets/images/{{currentLevel}}/template.png">
         </div>
     </div>
 </div>
 <div *ngFor="let item of dragPosition; let i =index" id="{{i+1}}" class="section__box" cdkDrag
     [cdkDragFreeDragPosition]="item" (cdkDragEnded)="dragEnd($event)">
-    <img src="../../../../../assets/images/easy-one/{{i+1}}.png">
+    <img src="../../../../../assets/images/{{currentLevel}}/{{i+1}}.png">
 </div>
-<div id="myModal" class="modal" *ngIf="endGameControl">
+
+<div id="myModal" class="modal" >
     <div id="end" class="modal-content bg-dark text-white">
         <h1>TEBRİKLER!!</h1>
         <div class="gameover">
             <button (click)="mainMenu()" class="btn btn-secondary gameEnd">Ana Menu</button>
-            <button (click)="nextLevel()" class="btn btn-secondary gameEnd">Sonraki Bölüm</button>
+            <button *ngIf="level!='9'" (click)="nextLevel()" class="btn btn-secondary gameEnd">Sonraki Bölüm</button>
         </div>
     </div>
 </div>
