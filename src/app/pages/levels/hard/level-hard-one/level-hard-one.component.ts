@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { CdkDragEnd } from '@angular/cdk/drag-drop';
-import { Router } from '@angular/router';
+import {Router, ActivatedRoute, Params} from '@angular/router';
 
 @Component({
   selector: 'app-level-hard-one',
@@ -9,7 +9,7 @@ import { Router } from '@angular/router';
 })
 export class LevelHardOneComponent implements OnInit {
   constructor(
-    private _router:Router
+    private _router:Router,private activatedRoute: ActivatedRoute
   ) {}
 
   dragPosition =[
@@ -35,6 +35,14 @@ export class LevelHardOneComponent implements OnInit {
   ]
 
   ngOnInit(): void {
+    let level=this.activatedRoute.snapshot.paramMap.get('id');
+    let num : number=+level;
+    if(num<1||num>9){
+      this._router.navigateByUrl('')
+    }
+    else{
+    this._router.navigate(['',level])
+    }
   }
 
   dragEnd($event: CdkDragEnd) {
