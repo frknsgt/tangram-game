@@ -9,38 +9,33 @@ import { AngularFireStorageModule } from '@angular/fire/storage';
 import { AngularFireAuthModule } from '@angular/fire/auth';
 import { firebaseConfig } from '../environments/environment';
 import {
-  LevelEasyOneComponent,
-  LevelHardOneComponent,
-  LevelMediumOneComponent,
   HomepageComponent,
   AboutComponent,
+  LevelsComponent,
+  LevelManagementComponent,
 } from './pages';
-
-import { LevelScreenComponent } from './pages/client/components/level-screen/level-screen.component';
-
-
+import { LevelScreenComponent, SelectionScreenComponent } from './components';
 
 @NgModule({
   declarations: [
     AppComponent,
-    LevelEasyOneComponent,
-    LevelHardOneComponent,
-    LevelMediumOneComponent,
     HomepageComponent,
-    AboutComponent, 
+    AboutComponent,
     LevelScreenComponent,
+    LevelsComponent,
+    SelectionScreenComponent,
+    LevelManagementComponent,
   ],
   imports: [
     BrowserModule,
-    DragDropModule, 
-    AppRoutingModule, 
+    DragDropModule,
+    AppRoutingModule,
     AngularFireModule.initializeApp(firebaseConfig),
-    AngularFirestoreModule, 
-    AngularFireAuthModule, 
-    AngularFireStorageModule 
+    AngularFirestoreModule,
+    AngularFireAuthModule,
+    AngularFireStorageModule,
   ],
   providers: [],
   bootstrap: [AppComponent],
-  
 })
 export class AppModule {}

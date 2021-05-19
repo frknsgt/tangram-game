@@ -1,0 +1,2 @@
+<app-level-screen *ngIf="openLevelScreen" [level]="level"></app-level-screen>
+<app-selection-screen *ngIf="!openLevelScreen" (openlevelScreen)="openlevelScreen($event)"></app-selection-screen>
