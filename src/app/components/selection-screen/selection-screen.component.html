@@ -1,0 +1,23 @@
+<div class="selection">
+    <div class="container h-100">
+        <div class="row h-100 align-items-center">
+            <div class="col text-center p-3 m-3 levels__btn levels__btn__easy" (click)="openlevelScreen.emit('easy')">
+                <div>Kolay</div>
+                <div><img class="levels__star" src="../../../../../assets/images/star/star.png">
+                </div>
+            </div>
+            <div class="col text-center p-3 m-3  levels__btn levels__btn__medium"
+                (click)="openlevelScreen.emit('medium')">
+                <div>Orta</div>
+                <div><img class="levels__star" src="../../../../../assets/images/star/star.png"><img
+                        class="levels__star" src="../../../../../assets/images/star/star.png"></div>
+            </div>
+            <div class="col text-center p-3 m-3  levels__btn levels__btn__hard" (click)="openlevelScreen.emit('hard')">
+                <div>Zor</div>
+                <div><img class="levels__star" src="../../../../../assets/images/star/star.png"><img
+                        class="levels__star" src="../../../../../assets/images/star/star.png"><img class="levels__star"
+                        src="../../../../../assets/images/star/star.png"></div>
+            </div>
+        </div>
+    </div>
+</div>

@@ -1,20 +1,20 @@
 import { ComponentFixture, TestBed } from '@angular/core/testing';
 
-import { LevelMediumOneComponent } from './level-medium-one.component';
+import { SelectionScreenComponent } from './selection-screen.component';
 
-describe('LevelMediumOneComponent', () => {
-  let component: LevelMediumOneComponent;
-  let fixture: ComponentFixture<LevelMediumOneComponent>;
+describe('SelectionScreenComponent', () => {
+  let component: SelectionScreenComponent;
+  let fixture: ComponentFixture<SelectionScreenComponent>;
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
-      declarations: [ LevelMediumOneComponent ]
+      declarations: [ SelectionScreenComponent ]
     })
     .compileComponents();
   });
 
   beforeEach(() => {
-    fixture = TestBed.createComponent(LevelMediumOneComponent);
+    fixture = TestBed.createComponent(SelectionScreenComponent);
     component = fixture.componentInstance;
     fixture.detectChanges();
   });

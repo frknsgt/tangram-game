@@ -1,2 +1,4 @@
-export * from './levels';
-export * from './client';
+export * from './about/about.component';
+export * from './homepage/homepage.component';
+export * from './levels/levels.component';
+export * from './level-management/level-management.component';

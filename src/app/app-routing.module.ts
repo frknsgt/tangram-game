@@ -1,14 +1,19 @@
 import { NgModule } from '@angular/core';
 import { Routes, RouterModule } from '@angular/router';
 import {
+  HomepageComponent,
+  LevelsComponent,
+  LevelManagementComponent,
   AboutComponent,
-  LevelEasyOneComponent,
-  LevelHardOneComponent,
 } from './pages';
 
 const routes: Routes = [
-  { path: '', component: AboutComponent },
-  { path: 'level-hard-one', component: LevelHardOneComponent },
+  { path: '', component: HomepageComponent },
+
+  { path: 'level/:level', component: LevelsComponent },
+  { path: 'redirect/:id', component: AboutComponent },
+  { path: 'levels', component: LevelManagementComponent },
+  { path: 'about', component: AboutComponent },
 ];
 
 @NgModule({

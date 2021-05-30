@@ -4,7 +4,20 @@
 
 export const environment = {
   production: false
+
+  
 };
+export const firebaseConfig = {
+  apiKey: "AIzaSyCOPPoSWnsR4oZU4gJuzGUNTy2ufOZlicw",
+  authDomain: "tangram-game-227c7.firebaseapp.com",
+  projectId: "tangram-game-227c7",
+  storageBucket: "tangram-game-227c7.appspot.com",
+  messagingSenderId: "148551390084",
+  appId: "1:148551390084:web:a3892baf3296ab041543d1",
+  measurementId: "G-3846RQT8E9"
+};
+
+
 
 /*
  * For easier debugging in development mode, you can import the following file
