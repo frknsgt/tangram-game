@@ -1,10 +1,14 @@
 import { NgModule } from '@angular/core';
 import { Routes, RouterModule } from '@angular/router';
-import { LevelEasyOneComponent, LevelHardOneComponent } from './pages';
+import {
+  AboutComponent,
+  LevelEasyOneComponent,
+  LevelHardOneComponent,
+} from './pages';
 
 const routes: Routes = [
-  { path: '', component: LevelEasyOneComponent },
-  { path: 'level-hard-one', component: LevelHardOneComponent }
+  { path: '', component: AboutComponent },
+  { path: 'level-hard-one', component: LevelHardOneComponent },
 ];
 
 @NgModule({
