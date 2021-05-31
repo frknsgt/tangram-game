@@ -1,79 +1,30 @@
-<h5 id="giris">Tangram Game Manisa Celal Bayar Üniversitesi 3. sınıf öğrencileri tarafından yazılan bu oyunda 9
-    level ve üç zorluk seviyesi bulunuyor.Detaylı bilgiler ve kodlar için hakkında kısmında bulunan github
-    linkinden kodlara ulaşabilirsiniz.</h5>
-<div>
-    <h1>PROJE TAKIMIMIZ</h1>
-</div>
-<div>
+<div class="bg-color w-100"></div>
+<div class="container py-5">
+    <h6 class="text-center">Tangram Game Manisa Celal Bayar Üniversitesi 3. sınıf öğrencileri tarafından yazılan bu
+        oyunda 9
+        level ve üç zorluk seviyesi bulunuyor.Detaylı bilgiler ve kodlar için hakkında kısmında bulunan github
+        linkinden kodlara ulaşabilirsiniz.</h6>
+    <h1 class="text-center">PROJE TAKIMIMIZ</h1>
     <div class="row">
-        <div class="col">
-            <img src="../../../../assets/img-about/sefa.jpg" class="img-thumbnail">
-            <h3>Sefa DEDEOĞLU</h3>
-            <div style="text-align: center;">
-                <a href="https://github.com/SefaDedeoglu">
-                    <!-- <fa-icon [icon]="github"></fa-icon> -->
-                </a>
-                <a href="https://www.instagram.com/sefadedeolu/">
-                    <!-- <fa-icon [icon]="instagram"></fa-icon> -->
-                </a>
-            </div>
-        </div>
-        <div class="col">
-            <img src="../../../../assets/img-about/ezgi.jpg" class="img-thumbnail">
-            <h3>Ezgi Selin KILIÇ</h3>
-            <div style="text-align: center;">
-                <a href="#">
-                    <!-- <fa-icon [icon]="github"></fa-icon> -->
-                </a>
-                <a href="https://www.instagram.com/kilic_ezgi_/">
-                    <!-- <fa-icon [icon]="instagram"></fa-icon> -->
-                </a>
-            </div>
-        </div>
-        <div class="col">
-            <img src="../../../../assets/img-about/furkan2.jpg" class="img-thumbnail">
-            <h3>Furkan GÜLCAN</h3>
-            <div style="text-align: center;">
-                <a href="https://www.instagram.com/fawmain/">
-                    <!-- <fa-icon [icon]="github"></fa-icon> -->
-                </a>
-                <a href="https://www.instagram.com/furkan.gulcan/">
-                    <!-- <fa-icon [icon]="instagram"></fa-icon> -->
-                </a>
-            </div>
-        </div>
-        <div class="col">
-            <img src="../../../../assets/img-about/sögüt.jpg" class="img-thumbnail">
-            <h3>Furkan SÖĞÜT</h3>
-            <div style="text-align: center;">
-                <a href="#">
-                    <!-- <fa-icon [icon]="github"></fa-icon> -->
-                </a>
-                <a href="https://www.instagram.com/frknsgt/">
-                    <!-- <fa-icon [icon]="instagram"></fa-icon> -->
-                </a>
-            </div>
-        </div>
-        <div class="col">
-            <img src="../../../../assets/img-about/ceyda.jpg" class="img-thumbnail">
-            <h3>Ceyda ALBAYRAK</h3>
-            <div style="text-align: center;">
-                <a href="#">
-                    <!-- <fa-icon [icon]="github"></fa-icon> -->
-                </a>
-                <a href="https://www.instagram.com/ceyda_albayrak5/">
-                    <!-- <fa-icon [icon]="instagram"></fa-icon> -->
-                </a>
+        <div class="col text-center mx-auto" *ngFor="let person of persons">
+            <img src="{{person.ImagePath}}" class="rounded-circle user-img">
+            <div class="text-center name py-2 mt-2">
+                <h3>{{person.Name}}</h3>
+                <p class="text-muted">{{person.Description}}</p>
             </div>
         </div>
     </div>
-</div>
-<div id="sonuc">
-    <h6>Lorem ipsum dolor sit amet consectetur adipisicing elit. Nam vero commodi quod. Laborum sequi blanditiis
-        error at saepe nihil quibusdam quam beatae quaerat dolorum quod minima fugit dicta facilis quisquam
-        obcaecati accusamus iure, tenetur, dolore animi qui atque reiciendis. Maxime tenetur, iure dolorem culpa
-        recusandae nulla cumque deserunt sint dignissimos necessitatibus incidunt! Sit iusto mollitia animi delectus
-        voluptate dolorem laborum cumque magni doloribus, voluptatum a dolore aperiam molestias cum omnis nesciunt
-        voluptates tempora. Maiores ut voluptate quam laborum autem iusto, totam quisquam fugiat cupiditate minus
-        hic odio porro impedit aliquid dolore, id quis! Ipsum et a culpa numquam quibusdam earum.</h6>
+    <h1 class="mt-3 text-center">Kullanılan Teknolojiler</h1>
+    <div class="row">
+        <div class="col-sm-6 col-12">
+            <h6><b>Angular:</b> Projenin tasarımında ve geliştirilmesinde framework olarak kullanılmıştır.</h6>
+            <h6><b>Adobe Fireworks:</b> Projede ki level fotoğraflarının tasarımları bu uygulama ile çizilmiştir.</h6>
+        </div>
+        <div class="col-sm-6 col-12 border-left border-secondary">
+            <h6><b>Firebase:</b> Projede oluşturulan level bilgileri firebase adlı realtime olarak çalışan bir
+                database'den çekilmiştir.</h6>
+            <h6><b>DragDrop:</b> Fotoğrafları sürükle bırak özelliği tanımlamak için kullanılan bir kütüphanedir. Bu
+                kütüphane Angular frameworkünün MatDragDrop kütüphanesinden çekilmektedir.</h6>
+        </div>
+    </div>
 </div>
