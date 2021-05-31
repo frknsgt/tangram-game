@@ -5,6 +5,7 @@ import {
   LevelsComponent,
   LevelManagementComponent,
   AboutComponent,
+  HelpComponent,
 } from './pages';
 
 const routes: Routes = [
@@ -14,6 +15,7 @@ const routes: Routes = [
   { path: 'redirect/:id', component: AboutComponent },
   { path: 'levels', component: LevelManagementComponent },
   { path: 'about', component: AboutComponent },
+  { path: 'help', component: HelpComponent },
 ];
 
 @NgModule({

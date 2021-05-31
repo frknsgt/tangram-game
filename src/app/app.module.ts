@@ -13,6 +13,7 @@ import {
   AboutComponent,
   LevelsComponent,
   LevelManagementComponent,
+  HelpComponent,
 } from './pages';
 import { LevelScreenComponent, SelectionScreenComponent } from './components';
 
@@ -25,6 +26,7 @@ import { LevelScreenComponent, SelectionScreenComponent } from './components';
     LevelsComponent,
     SelectionScreenComponent,
     LevelManagementComponent,
+    HelpComponent,
   ],
   imports: [
     BrowserModule,
